@@ -9,7 +9,7 @@ You will implement the functions in recommender.py:
 - recommend_songs
 """
 
-from recommender import load_songs, recommend_songs
+from src.recommender import load_songs, recommend_songs
 
 
 def main() -> None:
@@ -17,6 +17,14 @@ def main() -> None:
 
     # Starter example profile
     user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8}
+    # Taste profile: target values used for song comparisons
+    
+    user_prefs = {
+    "genre":        "lofi",   # preferred genre
+    "mood":         "chill",  # preferred mood
+    "energy":       0.40,     # target energy level (0.0 = very calm, 1.0 = very intense)
+    "acousticness": 0.75,     # target acousticness (0.0 = electronic, 1.0 = fully acoustic)
+    }
 
     recommendations = recommend_songs(user_prefs, songs, k=5)
 

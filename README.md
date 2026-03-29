@@ -31,6 +31,32 @@ You can include a simple diagram or bullet list if helpful.
 
 ---
 
+Each song in my system will look at the following attributes: Mood, Energy, Acousticness, and genre. The UserProfile will store the following: favorite genre, favorite mood, target energy, and acoustic track preference. For every song, questions will be asked to see how close the song relates to the attributes of the UserProfile. If answer is Yes, a point will be added to each question and 0 points for an answer of No. The songs with the highest scores will be recomended to the user. 
+
+flowchart TD
+    A[songs.csv] --> B[Load all songs]
+    B --> C[Pick one song]
+    C --> D{Genre match?}
+    D -- Yes --> E[+2.0 points]
+    D -- No --> F[+0 points]
+    E --> G{Mood match?}
+    F --> G
+    G -- Yes --> H[+1.0 points]
+    G -- No --> I[+0 points]
+    H --> J[Energy proximity]
+    I --> J
+    J --> K[+0.0 to +1.0 points]
+    K --> L[Acousticness proximity]
+    L --> M[+0.0 to +0.5 points]
+    M --> N[Add all points → Final Score]
+    N --> O{More songs?}
+    O -- Yes --> C
+    O -- No --> P[Sort all songs by score]
+    P --> Q[Return top k songs]
+The potenital bias could be towards Genre as it gets added by 2, suppresing songs with other characteristics like energy and mood. 
+
+
+
 ## Getting Started
 
 ### Setup
@@ -75,6 +101,28 @@ Use this section to document the experiments you ran. For example:
 - How did your system behave for different types of users
 
 ---
+Without any experimentation:
+
+Loaded 18 songs from data/songs.csv
+
+Top recommendations:
+
+Midnight Coding - Score: 4.46      
+Because: Because it matches your favorite genre (lofi), and matches your preferred mood (chill), and energy is close to your target (0.42)  
+
+Library Rain - Score: 4.40
+Because: Because it matches your favorite genre (lofi), and matches your preferred mood (chill), and energy is close to your target (0.35)  
+
+Focus Flow - Score: 3.48
+Because: Because it matches your favorite genre (lofi), and energy is close to your target (0.4)
+
+Spacewalk Thoughts - Score: 2.29   
+Because: Because it matches your preferred mood (chill), and energy is close to your target (0.28)       
+
+Coffee Shop Stories - Score: 1.40  
+Because: Because it energy is close to your target (0.37)
+
+
 
 ## Limitations and Risks
 
