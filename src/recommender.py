@@ -78,17 +78,17 @@ def score_song(song: Dict, user_prefs: Dict) -> float:
     """
     score = 0.0
 
-    # +2.0 for genre match
+    # +1.0 for genre match (halved from 2.0)
     if song["genre"] == user_prefs["genre"]:
-        score += 2.0
+        score += 1.0
 
     # +1.0 for mood match
     if song["mood"] == user_prefs["mood"]:
         score += 1.0
 
-    # 0.0–1.0 based on energy proximity
+    # 0.0–2.0 based on energy proximity (doubled from 1.0)
     energy_diff = abs(song["energy"] - user_prefs["energy"])
-    score += (1.0 - energy_diff)
+    score += 2.0 * (1.0 - energy_diff)
 
     # 0.0–0.5 based on acousticness proximity
     acoustic_diff = abs(song["acousticness"] - user_prefs["acousticness"])

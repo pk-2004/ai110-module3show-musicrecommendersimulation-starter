@@ -19,6 +19,8 @@ Prompts:
 
 ---
 
+The recommender takes genre, accoustic, energy, and mood of song to generate song recommendations based on User profile with these attributes. This is mainly for classroom exploration since in the real world the dataset would be much bigger. An assumption made here is that the Userprofiles are defined well and are not empty. 
+
 ## 3. How the Model Works  
 
 Explain your scoring approach in simple language.  
@@ -34,6 +36,8 @@ Avoid code here. Pretend you are explaining the idea to a friend who does not pr
 
 ---
 
+The features used here are genre, mood, energy, and acoustic. The user preference also considers these attributes. The model compares user preference with the song atributes, and aggregates a total score based on matching characteristics. I tinkered with the weights for each attribute. 
+
 ## 4. Data  
 
 Describe the dataset the model uses.  
@@ -47,6 +51,7 @@ Prompts:
 
 ---
 
+There are 18 songs. A wide array of moods and genre are represented here, inlcuding moody, sad, jazz, etc. 
 ## 5. Strengths  
 
 Where does your system seem to work well  
@@ -58,6 +63,7 @@ Prompts:
 - Cases where the recommendations matched your intuition  
 
 ---
+The model works well with recommending the top 2 songs, but seems to struggle in the other songs. It predicts high energy songs well. 
 
 ## 6. Limitations and Bias 
 
@@ -71,6 +77,8 @@ Prompts:
 - Ways the scoring might unintentionally favor some users  
 
 ---
+A song with the right genre but terrible energy/mood will often outscore a perfect-energy song from the wrong genre. This will affect niche genre preferences like classical. 
+
 
 ## 7. Evaluation  
 
@@ -87,6 +95,12 @@ No need for numeric metrics unless you created some.
 
 ---
 
+I tested the following profiles:         
+"High-Energy Pop":   high_energy_pop,
+        "Chill Lofi":        chill_lofi,
+        "Deep Intense Rock": deep_intense_rock
+I looked at the top suggestion to see if the song corresponds to the user profile. What surprised me was when doubiling the score for energy and halfing the score for energy, I got the same score and the same song recommendations. 
+
 ## 8. Future Work  
 
 Ideas for how you would improve the model next.  
@@ -100,6 +114,8 @@ Prompts:
 
 ---
 
+Will look to tinker with niche genre profiles to see how the model performs. I can try assigning equal weights to each attribute for a balanced song recommendation list. Increase size and representation of dataset.
+
 ## 9. Personal Reflection  
 
 A few sentences about your experience.  
@@ -109,3 +125,5 @@ Prompts:
 - What you learned about recommender systems  
 - Something unexpected or interesting you discovered  
 - How this changed the way you think about music recommendation apps  
+
+I got get a sense of how recommender systems work, like giving higher weightage for certain attributes like Genre. The difference between collaborating- filtering and individualized filtering. It is interesting to see how songs are associated with a wide array of meta data to be used for recommendation systems. The AI helped me to understand the implementations of the functions. I just wonder how music recommendation apps store all this data and cater to every single user. Just trying to visualize their infrastructre. 

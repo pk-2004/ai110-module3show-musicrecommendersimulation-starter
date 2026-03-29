@@ -122,6 +122,111 @@ Because: Because it matches your preferred mood (chill), and energy is close to 
 Coffee Shop Stories - Score: 1.40  
 Because: Because it energy is close to your target (0.37)
 
+Double the importance of energy and half the importance of genre:
+
+Testing different profiles:
+Loaded 18 songs from data/songs.csv
+
+=== High-Energy Pop ===
+Sunrise City - Score: 4.40
+Because: Because it matches your favorite genre (pop), and matches your preferred mood (happy), and energy is close to your target (0.82)   
+
+Gym Hero - Score: 3.43
+Because: Because it matches your favorite genre (pop), and energy is close to your target (0.93)
+
+Rooftop Lights - Score: 2.25       
+Because: Because it matches your preferred mood (happy), and energy is close to your target (0.76)       
+
+Storm Runner - Score: 1.47
+Because: Because it energy is close to your target (0.91)
+
+Deep Jungle - Score: 1.46
+Because: Because it energy is close to your target (0.85)
+
+
+=== Chill Lofi ===
+Midnight Coding - Score: 4.46      
+Because: Because it matches your favorite genre (lofi), and matches your preferred mood (chill), and energy is close to your target (0.42)  
+
+Library Rain - Score: 4.40
+Because: Because it matches your favorite genre (lofi), and matches your preferred mood (chill), and energy is close to your target (0.35)  
+
+Focus Flow - Score: 3.48
+Because: Because it matches your favorite genre (lofi), and energy is close to your target (0.4)
+
+Spacewalk Thoughts - Score: 2.29   
+Because: Because it matches your preferred mood (chill), and energy is close to your target (0.28)       
+
+Coffee Shop Stories - Score: 1.40  
+Because: Because it energy is close to your target (0.37)
+
+
+=== Deep Intense Rock ===
+Storm Runner - Score: 4.49
+Because: Because it matches your favorite genre (rock), and matches your preferred mood (intense), and energy is close to your target (0.91)
+
+Gym Hero - Score: 2.46
+Because: Because it matches your preferred mood (intense), and energy is close to your target (0.93)     
+
+Neon Carnival - Score: 1.45        
+Because: Because it energy is close to your target (0.94)
+
+Deep Jungle - Score: 1.44
+Because: Because it energy is close to your target (0.85)
+
+Iron Curtain - Score: 1.43
+Because: Because it energy is close to your target (0.97)
+
+=== High-Energy Pop ===
+Sunrise City - Score: 4.34
+Because: Because it matches your favorite genre (pop), and matches your preferred mood (happy), and energy is close to your target (0.82)   
+
+Gym Hero - Score: 3.38
+Because: Because it matches your favorite genre (pop), and energy is close to your target (0.93)
+
+Rooftop Lights - Score: 3.13       
+Because: Because it matches your preferred mood (happy), and energy is close to your target (0.76)       
+
+Storm Runner - Score: 2.44
+Because: Because it energy is close to your target (0.91)
+
+Deep Jungle - Score: 2.43
+Because: Because it energy is close to your target (0.85)
+
+
+=== Chill Lofi ===
+Midnight Coding - Score: 4.44      
+Because: Because it matches your favorite genre (lofi), and matches your preferred mood (chill), and energy is close to your target (0.42)  
+
+Library Rain - Score: 4.34
+Because: Because it matches your favorite genre (lofi), and matches your preferred mood (chill), and energy is close to your target (0.35)  
+
+Focus Flow - Score: 3.48
+Because: Because it matches your favorite genre (lofi), and energy is close to your target (0.4)
+
+Spacewalk Thoughts - Score: 3.17   
+Because: Because it matches your preferred mood (chill), and energy is close to your target (0.28)       
+
+Coffee Shop Stories - Score: 2.37  
+Because: Because it energy is close to your target (0.37)
+
+
+=== Deep Intense Rock ===
+Storm Runner - Score: 4.49
+Because: Because it matches your favorite genre (rock), and matches your preferred mood (intense), and energy is close to your target (0.91)
+
+Gym Hero - Score: 3.44
+Because: Because it matches your preferred mood (intense), and energy is close to your target (0.93)     
+
+Neon Carnival - Score: 2.42        
+Because: Because it energy is close to your target (0.94)
+
+Deep Jungle - Score: 2.38
+Because: Because it energy is close to your target (0.85)
+
+Iron Curtain - Score: 2.37
+Because: Because it energy is close to your target (0.97)
+
 
 
 ## Limitations and Risks

@@ -13,29 +13,42 @@ from src.recommender import load_songs, recommend_songs
 
 
 def main() -> None:
-    songs = load_songs("data/songs.csv") 
+    songs = load_songs("data/songs.csv")
 
-    # Starter example profile
-    user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8}
-    # Taste profile: target values used for song comparisons
-    
-    user_prefs = {
-    "genre":        "lofi",   # preferred genre
-    "mood":         "chill",  # preferred mood
-    "energy":       0.40,     # target energy level (0.0 = very calm, 1.0 = very intense)
-    "acousticness": 0.75,     # target acousticness (0.0 = electronic, 1.0 = fully acoustic)
+    high_energy_pop = {
+        "genre":        "pop",
+        "mood":         "happy",
+        "energy":       0.88,
+        "acousticness": 0.10,
     }
 
-    recommendations = recommend_songs(user_prefs, songs, k=5)
+    chill_lofi = {
+        "genre":        "lofi",
+        "mood":         "chill",
+        "energy":       0.40,
+        "acousticness": 0.75,
+    }
 
-    print("\nTop recommendations:\n")
-    for rec in recommendations:
-        # You decide the structure of each returned item.
-        # A common pattern is: (song, score, explanation)
-        song, score, explanation = rec
-        print(f"{song['title']} - Score: {score:.2f}")
-        print(f"Because: {explanation}")
-        print()
+    deep_intense_rock = {
+        "genre":        "rock",
+        "mood":         "intense",
+        "energy":       0.91,
+        "acousticness": 0.08,
+    }
+
+    users = {
+        "High-Energy Pop":   high_energy_pop,
+        "Chill Lofi":        chill_lofi,
+        "Deep Intense Rock": deep_intense_rock,
+    }
+
+    for profile_name, user_prefs in users.items():
+        print(f"\n=== {profile_name} ===")
+        recommendations = recommend_songs(user_prefs, songs, k=5)
+        for song, score, explanation in recommendations:
+            print(f"{song['title']} - Score: {score:.2f}")
+            print(f"Because: {explanation}")
+            print()
 
 
 if __name__ == "__main__":
